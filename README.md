@@ -1,10 +1,10 @@
-# Chinese Novel Scrapper Web and Electron App
+# Novel Scrapper Web and Electron App
 
 GitHub repo: https://github.com/shahriar-ahmed-seam/Novel-scrapper-web-and-electron-app
 
 Windows release download: https://github.com/shahriar-ahmed-seam/Novel-scrapper-web-and-electron-app/releases/download/v1.0.0/TomatoPipelineStandalone.exe
 
-Local API + parser for `https://tt.sjmyzq.cn/api/raw_full?item_id=...` and a minimal chapter reader UI.
+Local API + parser for `https://**.****.cn/api/raw_full?item_id=...` and a minimal chapter reader UI.
 
 ## Run
 
