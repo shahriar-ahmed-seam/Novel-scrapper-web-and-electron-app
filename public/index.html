@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novel Chapter Viewer (Mock Inline Comments)</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="topbar__left">
+          <div class="brand">Chapter Viewer</div>
+        </div>
+        <div class="topbar__right">
+          <label class="label" for="itemId">Chapter ID</label>
+          <input id="itemId" class="input" type="text" placeholder="7601844263415988760" />
+          <button id="loadBtn" class="btn">Load</button>
+          <label class="checkbox">
+            <input id="mockMode" type="checkbox" />
+            Mock mode
+          </label>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="reader">
+          <div class="meta">
+            <div id="metaTitle" class="meta__title">No chapter loaded</div>
+            <div id="metaSub" class="meta__sub"></div>
+            <div id="metaInfo" class="meta__info"></div>
+          </div>
+
+          <div id="lines" class="lines" aria-label="chapter lines"></div>
+        </section>
+
+        <aside class="comments">
+          <div class="comments__header">
+            <div class="comments__title">Inline Comments</div>
+            <div id="selectedLine" class="comments__subtitle">Select a line</div>
+          </div>
+
+          <div id="commentList" class="comments__list"></div>
+
+          <div class="comments__composer">
+            <textarea id="commentText" class="textarea" placeholder="Write a comment for the selected line..."></textarea>
+            <button id="addCommentBtn" class="btn" disabled>Add comment</button>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "tomato-pipeline-standalone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "cli": "electron . cli",
+    "build": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "electron": "^41.2.1",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "local.tomato.pipeline.standalone",
+    "productName": "TomatoPipelineStandalone",
+    "files": [
+      "src/**/*",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "TomatoPipelineStandalone.exe"
+    }
+  }
+}

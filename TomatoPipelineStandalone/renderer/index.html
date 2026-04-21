@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TomatoPipelineStandalone</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="cover-wrap">
+          <img id="cover" class="cover" alt="Cover" />
+        </div>
+
+        <div class="meta">
+          <h1 id="novelTitle" class="title">Tomato Pipeline</h1>
+
+          <div class="grid">
+            <label class="field">
+              <span class="label">Novel ID</span>
+              <input id="novelId" class="input" type="text" placeholder="7133191976488274951" />
+            </label>
+
+            <label class="field">
+              <span class="label">Custom title (optional)</span>
+              <input id="customTitle" class="input" type="text" placeholder="Novel_Name" />
+            </label>
+          </div>
+
+          <div class="field">
+            <span class="label">Description</span>
+            <div id="description" class="description"></div>
+          </div>
+
+          <div class="grid">
+            <label class="field">
+              <span class="label">Start chapter</span>
+              <select id="startChapter" class="select" disabled></select>
+            </label>
+
+            <label class="field">
+              <span class="label">End chapter</span>
+              <select id="endChapter" class="select" disabled></select>
+            </label>
+
+            <label class="field">
+              <span class="label">Output path</span>
+              <input id="outputPath" class="input" type="text" placeholder="C:\\Users\\Seam\\Desktop\\novel_out" />
+            </label>
+          </div>
+
+          <div class="grid">
+            <label class="field">
+              <span class="label">Download delay (ms)</span>
+              <input id="downloadDelayMs" class="input" type="number" min="0" step="50" value="150" />
+            </label>
+
+            <label class="field">
+              <span class="label">Translate delay (ms)</span>
+              <input id="translateDelayMs" class="input" type="number" min="0" step="100" value="600" />
+            </label>
+
+            <label class="field">
+              <span class="label">Chunk size (chars)</span>
+              <input id="chunkChars" class="input" type="number" min="2000" step="100" value="4800" />
+            </label>
+          </div>
+
+          <div class="grid">
+            <label class="field">
+              <span class="label">Show browser</span>
+              <select id="showBrowser" class="select">
+                <option value="0" selected>Off (headless)</option>
+                <option value="1">On (visible)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">&nbsp;</span>
+              <button id="loadBtn" class="btn" type="button">Load Novel</button>
+            </label>
+
+            <label class="field">
+              <span class="label">&nbsp;</span>
+              <button id="runBtn" class="btn primary" type="button" disabled>Download + Translate</button>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="pauseBtn" class="btn" disabled>Pause</button>
+            <button id="stopBtn" class="btn danger" disabled>Stop</button>
+          </div>
+
+          <div class="progress">
+            <div class="progress-top">
+              <div id="status" class="status">Idle</div>
+              <div id="counts" class="counts">0 / 0</div>
+            </div>
+            <div id="analytics" class="analytics"></div>
+            <div class="bar">
+              <div id="barFill" class="bar-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="main-grid">
+          <div id="chapterList" class="chapter-list"></div>
+
+          <aside id="logPanel" class="log-panel" data-open="1">
+            <div class="log-head">
+              <div class="log-title">Live Log</div>
+              <button id="logToggle" class="btn ghost" type="button">Close</button>
+            </div>
+            <pre id="logBody" class="log-body"></pre>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

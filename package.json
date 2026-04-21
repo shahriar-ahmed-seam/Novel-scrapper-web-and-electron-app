@@ -1,0 +1,17 @@
+{
+  "name": "novel-scraper-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "parse:local": "node src/parse_local.js raw_full.json parsed_local.json",
+    "batch:download": "node src/batch_download.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
